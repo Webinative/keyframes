@@ -1,2 +1,3 @@
-# keyframes-django
-keyframes - a workflow management app for video producers
+# Keyframes
+
+Keyframes - a workflow management app for video producers
