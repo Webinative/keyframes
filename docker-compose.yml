@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  keyframes-django:
+    build: .
+    user: webinative
+    command: python -u manage.py runserver 0:8000
+    container_name: keyframes-django
+    env_file:
+      - ./keyframes-django.env
+      - ./.env
+    volumes:
+      - .:/home/webinative/code
+      - keyframes-django-vscode:/home/webinative/.vscode-server
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    restart: on-failure
+
+volumes:
+  keyframes-django-vscode:

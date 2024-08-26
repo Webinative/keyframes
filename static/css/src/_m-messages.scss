@@ -1,0 +1,86 @@
+/*
+Messages (levels)
+
+Messages with different levels.
+
+Markup:
+<ul class="m-messages">
+    <li class="m-messages__item {{modifier_class}}">
+        <span class="m-messages__icon"></span>
+        <span class="m-messages__level">Level</span>
+        <span class="m-messages__desc">This is a message.</span>
+    </li>
+</ul>
+
+.m-messages__item--error - error message
+.m-messages__item--warning - warning message
+.m-messages__item--success - success message
+
+Styleguide Messages.Levels
+*/
+.m-messages {
+    --info-txt: #3896DA;
+    --info-bg: #E6EEF4;
+    --error-txt: #DC5A5A;
+    --error-bg: #F7E9E9;
+    --success-txt: #67A749;
+    --success-bg: #E2EFDC;
+    --warning-txt: #AC951E;
+    --warning-bg: #F3F0D4;
+
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        display: flex;
+        column-gap: 10px;
+        width: fit-content;
+        margin-block-end: 20px;
+        padding: 10px;
+        color: var(--info-txt);
+        background-color: var(--info-bg);
+
+        &--error {
+            color: var(--error-txt);
+            background-color: var(--error-bg);
+        }
+
+        &--warning {
+            color: var(--warning-txt);
+            background-color: var(--warning-bg);
+        }
+
+        &--success {
+            color: var(--success-txt);
+            background-color: var(--success-bg);
+        }
+    }
+
+    &__icon {
+        --sprite-width: 96px;
+        --sprite-height: 24px;
+        --icon-size: 24px;
+
+        width: var(--icon-size);
+        height: var(--icon-size);
+        background-image: url('../../images/sprite-message-icons-24px.svg');
+        background-size: var(--sprite-width) var(--sprite-height);
+        background-position: calc(-2 * var(--icon-size)) 0;
+    }
+
+    &__item--error &__icon {
+        background-position-x: 0;
+    }
+
+    &__item--success &__icon {
+        background-position-x: calc(-1 * var(--icon-size));
+    }
+
+    &__item--warning &__icon {
+        background-position-x: calc(-3 * var(--icon-size));
+    }
+
+    &__level {
+        font-weight: bold;
+    }
+}

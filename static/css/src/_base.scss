@@ -1,0 +1,123 @@
+:root {
+    --heading-font-family: 'Spline Sans Mono', monospace;
+    --body-font-family: 'Spline Sans Mono', monospace;
+    --heading-txt: #000;
+    --body-txt: #4d4d4d;
+
+    --ip-border: #d9d9d9;
+    --ip-border--focus: #898989;
+    --ip-border--disabled: hsla(0, 0%, 85%, 0.5);
+    --ip-bg: #fafafa;
+    --ip-bg--focus: #fff;
+    --ip-bg--disabled: hsla(0, 0%, 98%, 0.5);
+    --ip-placeholder-txt: #999;
+    --ip-error-txt: #ea4a40;
+    --ip-checked-txt: #000;
+
+    --btn-txt: inherit;
+    --btn-txt--hover: inherit;
+    --btn-txt--active: white;
+    --btn-bg: #e2e2e2;
+    --btn-bg--hover: #ebebeb;
+    --btn-bg--active: #a5a5a5;
+    --btn-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .25);
+    --btn-box-shadow--hover: inset 0 -2px 0 rgba(0, 0, 0, .25);
+    --btn-box-shadow--active: inset 0 2px 0 rgba(0, 0, 0, .25);
+}
+
+/*
+Headings
+
+Headings H1 to H6.
+
+Markup:
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+Styleguide Base.Headings
+*/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--heading-font-family);
+    line-height: 120%;
+    color: var(--heading-txt);
+}
+
+h1, .h1 {
+    margin-block: 0.67em;
+    font-size: 2rem;
+}
+
+h2, .h2 {
+    margin-block: 0.83em;
+    font-size: 1.5rem;
+}
+
+h3, .h3 {
+    margin-block: 1em;
+    font-size: 1.1875rem;
+}
+
+h4, .h4 {
+    margin-block: 1.33em;
+    font-size: 1rem;
+}
+
+h5, .h5 {
+    margin-block: 1.67em;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h6, .h6 {
+    margin-block: 2.33em;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/*
+Body text
+
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum ante purus, nec gravida elit iaculis id.
+Morbi rhoncus lacus quam, ut consectetur lorem dapibus et. Phasellus vel cursus tellus.</p>
+
+Styleguide Base.BodyText
+*/
+body {
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--body-txt);
+}
+
+/*
+Links
+
+Markup:
+<a href="#">Normal Link</a><br>
+<a href="#" class="pseudo-visited-link">Visited Link</a>
+
+Styleguide Base.Links
+*/
+a {
+    --link-txt: #2284CA;
+    --link-txt--visited: #8E33D6;
+
+    color: var(--link-txt);
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:visited,
+    &.pseudo-visited-link {
+        color: var(--link-txt--visited);
+    }
+}

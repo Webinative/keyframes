@@ -1,0 +1,307 @@
+/*
+Select Menu
+
+Select-menu with searchable options.
+
+Markup:
+<div class="m-ip-select {{ modifier_class }}">
+    <div class="m-ip-select__overlay"></div>
+    <label class="m-ip-select__label">Country</label>
+    <div class="m-ip-select__input">
+        <span class="m-ip-select__display is-placeholder">Select</span>
+        <select class="m-ip-select__value" name="country" hidden>
+            <option value="1">Afghanistan</option>
+            <option value="2">Albania</option>
+            <option value="3">Algeria</option>
+            <option value="4">India</option>
+            <option value="5">Indonesia</option>
+            <option value="6">United Kingdom</option>
+            <option value="7">United States of America</option>
+        </select>
+    </div>
+    <div class="m-ip-select__options-wrapper">
+        <input type="search" class="m-ip-select__search" name="search" placeholder="Search" />
+        <ul class="m-ip-select__options">
+            <li data-value="1" class="m-ip-select__opt-item">Afghanistan</li>
+            <li data-value="2" class="m-ip-select__opt-item">Albania</li>
+            <li data-value="3" class="m-ip-select__opt-item">Algeria</li>
+            <li data-value="4" class="m-ip-select__opt-item">India</li>
+            <li data-value="5" class="m-ip-select__opt-item">Indonesia</li>
+            <li data-value="6" class="m-ip-select__opt-item">United Kingdom</li>
+            <li data-value="7" class="m-ip-select__opt-item">United States of America</li>
+        </ul>
+    </div>
+</div>
+
+.is-open - Select menu options visible.
+
+Styleguide SelectMenu.UIStates
+*/
+.m-ip-select {
+    --overlay-zindex: 1;
+    --menu-zindex: 10;
+    --tag-bg: #a5a5a5;
+
+    --sprite-width: 72px;
+    --sprite-height: 72px;
+    --icon-size: 24px;
+
+    --opt-txt--hover: inherit;
+    --opt-bg--hover: #d9d9d9;
+
+    position: relative;
+
+    &__overlay {
+        display: none;
+        position: fixed;
+        z-index: var(--overlay-zindex);
+        background-color: rgba(0, 0, 0, .1);
+        inset: 0;
+    }
+        &.is-open &__overlay {
+            display: block;
+        }
+
+    &__tags-wrapper {
+        display: flex;
+        column-gap: 10px;
+        flex-wrap: wrap;
+        margin: 0;
+        margin-block-end: 10px;
+        border: none;
+        padding: 0;
+        list-style: none;
+        row-gap: 8px;
+    }
+
+    &__tag {
+        display: inline-flex;
+        column-gap: 6px;
+        padding: 4px 4px 4px 8px;
+        color: white;
+        background-color: var(--tag-bg);
+    }
+
+        &__tag-x {
+            display: inline-block;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-position: calc(-1 * var(--icon-size)) calc(-2 * var(--icon-size));
+            background-size: var(--sprite-width) var(--sprite-height);
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, .2);
+            }
+
+            &:active {
+                background-color:rgba(0, 0, 0, .25);
+                box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25);
+            }
+        }
+
+    &__label {
+        display: block;
+        margin-block-end: 6px;
+        font-weight: bold;
+    }
+
+    &__input {
+        display: flex;
+        width: -webkit-fill-available;
+        border: 1px solid var(--ip-border);
+        padding: 10px 14px;
+        background-color: var(--ip-bg);
+        outline: none;
+
+        &:hover {
+            border-color: var(--ip-border--focus);
+            background-color: var(--ip-bg--focus);
+        }
+
+        &::after {
+            --icon-size: 24px;
+
+            content: '';
+            display: block;
+            flex-shrink: 0;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-repeat: no-repeat;
+            background-position: 0 calc(-2 * var(--icon-size));
+            background-size: var(--sprite-width) var(--sprite-height);
+        }
+    }
+
+    &__display {
+        user-select: none;
+
+        &.is-placeholder {
+            flex-grow: 1;
+            overflow: hidden;
+            color: var(--ip-placeholder-txt);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    &__options-wrapper {
+        visibility: hidden;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        width: -webkit-fill-available;
+        border: 1px solid var(--ip-border);
+        padding: 4px;
+        background-color: white;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+        transform: translateY(100%) translateY(-12px);
+        opacity: 0;
+        transition: all .2s linear;
+    }
+
+        &.is-open &__options-wrapper {
+            visibility: visible;
+            z-index: var(--menu-zindex);
+            transform: translateY(100%) translateY(2px);
+            opacity: 1;
+            transition: all .2s linear;
+        }
+
+    &__search {
+        width: -webkit-fill-available;
+        border: none;
+        border: 1px solid var(--ip-border);
+        padding: 5px 12px;
+        font-size: 16px;
+        line-height: 150%;
+        background-color: var(--ip-bg);
+        outline: none;
+
+        &::placeholder {
+            color: var(--ip-placeholder-txt);
+        }
+
+        &::-webkit-search-cancel-button {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-position: calc(-2 * var(--icon-size)) calc(-2 * var(--icon-size));
+            background-size: var(--sprite-width) var(--sprite-height);
+            -webkit-appearance: none;
+        }
+
+        &:focus {
+            border-color: var(--ip-border--focus);
+            background-color: var(--ip-bg--focus);
+            box-shadow: inset 0 2px 2px rgba(0, 0, 0, .1);
+        }
+
+        @media (min-width: 768px) {
+            padding: 6px 10px;
+        }
+    }
+
+    &__options {
+        max-height: calc((3 * 44px) + 24px);
+        overflow: auto;
+        margin: 0;
+        border: none;
+        padding: 0;
+        list-style: none;
+
+        @media (min-width: 768px) {
+            max-height: calc((4 * 30px) + 15px);
+        }
+    }
+
+    &__opt-item {
+        padding: 5px;
+        user-select: none;
+
+        &:hover {
+            color: var(--opt-txt--hover);
+            background-color: var(--opt-bg--hover);
+        }
+    }
+
+    &__options--multiple &__opt-item {
+        display: flex;
+        column-gap: 4px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-position: 0 calc(-1 * var(--icon-size));
+            background-size: var(--sprite-width) var(--sprite-height);
+        }
+
+        &:hover::before {
+            background-position-x: calc(-1 * var(--icon-size));
+        }
+
+        &.is-checked::before {
+            background-position-x: calc(-2 * var(--icon-size));
+        }
+
+        // &.is-checked:hover::before {
+        //     background-position: calc(-2 * var(--icon-size)) 0;
+        // }
+    }
+}
+
+/*
+Select Menu (Multiple)
+
+Searchable select-menu with multi-select options.
+
+Markup:
+<div class="m-ip-select {{ modifier_class }}">
+    <div class="m-ip-select__overlay"></div>
+    <label class="m-ip-select__label">Country</label>
+    <ul class="m-ip-select__tags-wrapper">
+        <li class="m-ip-select__tag">
+            India
+            <span class="m-ip-select__tag-x"></span>
+        </li>
+        <li class="m-ip-select__tag">
+            United Kingdom
+            <span class="m-ip-select__tag-x"></span>
+        </li>
+    </ul>
+    <div class="m-ip-select__input">
+        <span class="m-ip-select__display is-placeholder">Select</span>
+        <select class="m-ip-select__value" name="country" multiple hidden>
+            <option value="1">Afghanistan</option>
+            <option value="2">Albania</option>
+            <option value="3">Algeria</option>
+            <option value="4">India</option>
+            <option value="5">Indonesia</option>
+            <option value="6">United Kingdom</option>
+            <option value="7">United States of America</option>
+        </select>
+    </div>
+    <div class="m-ip-select__options-wrapper">
+        <input type="search" class="m-ip-select__search" name="search" placeholder="Search" />
+        <ul class="m-ip-select__options m-ip-select__options--multiple">
+            <li data-value="afg" class="m-ip-select__opt-item">Afghanistan</li>
+            <li data-value="alb" class="m-ip-select__opt-item">Albania</li>
+            <li data-value="alg" class="m-ip-select__opt-item">Algeria</li>
+            <li data-value="in" class="m-ip-select__opt-item is-checked">India</li>
+            <li data-value="indo" class="m-ip-select__opt-item">Indonesia</li>
+            <li data-value="uk" class="m-ip-select__opt-item is-checked">United Kingdom</li>
+            <li data-value="usa" class="m-ip-select__opt-item">United States of America</li>
+        </ul>
+    </div>
+</div>
+
+.is-open - Select menu options visible.
+
+Styleguide SelectMenu.Multiple
+*/
