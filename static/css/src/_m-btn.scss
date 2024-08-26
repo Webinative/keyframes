@@ -1,0 +1,120 @@
+/*
+Buttons (UI states)
+
+Buttons user-interaction states.
+
+Markup:
+<button class="m-btn {{modifier_class}}">Button</button>
+<button class="m-btn m-btn--primary {{modifier_class}}">Button</button>
+<button class="m-btn m-btn--secondary {{modifier_class}}">Button</button>
+
+:hover - mouse over state
+:active - pressed state
+:disabled - disabled, not clickable
+
+Styleguide Buttons.UIStates
+*/
+.m-btn {
+    margin: 0;
+    border: none;
+    padding: 10px 16px;
+    color: var(--btn-txt);
+    font-weight: bold;
+    background-color: var(--btn-bg);
+    box-shadow: var(--btn-box-shadow);
+
+    &:enabled:hover,
+    &.pseudo-class-hover {
+        color: var(--btn-txt--hover);
+        background-color: var(--btn-bg--hover);
+        box-shadow: var(--btn-box-shadow--hover);
+    }
+
+    &:enabled:active,
+    &.pseudo-class-active {
+        color: var(--btn-txt--active);
+        background-color: var(--btn-bg--active);
+        box-shadow: var(--btn-box-shadow--active);
+    }
+
+    &:disabled,
+    &.pseudo-class-disabled {
+        opacity: .5;
+    }
+
+    &--primary {
+        --btn-bg: #008bce;
+        --btn-bg--hover: hsl(200, 100%, 46%);
+        --btn-bg--active: hsl(200, 100%, 35%);
+
+        --btn-txt: white;
+        --btn-txt--hover: white;
+        --btn-txt--active: white;
+
+        --btn-box-shadow: inset 0 -2px 0 #0077B0;
+        --btn-box-shadow--hover: inset 0 -2px 0 #008ACC;
+        --btn-box-shadow--active: inset 0 2px 0 #005985;
+    }
+
+    &--secondary {
+        --btn-txt: #008bce;
+        --btn-txt--hover: hsl(200, 100%, 46%);
+        --btn-txt--active: hsl(200, 100%, 35%);
+
+        --btn-bg: #f4f4f4;
+        --btn-bg--hover: #fff;
+        --btn-bg--active: #e2e2e2;
+
+        --btn-box-shadow: inset 0 -2px 0 #81CEF2;
+        --btn-box-shadow--hover: inset 0 -2px 0 #81CEF2;
+        --btn-box-shadow--active: inset 0 2px 0 #7EB5CF;
+
+        border: 1px solid #008bce;
+
+        &:enabled:hover {
+            border-color: hsl(200, 100%, 46%);
+        }
+
+        &:enabled:active {
+            border-color: hsl(200, 100%, 35%);
+        }
+    }
+
+    &--large {
+        padding: 15px 20px;
+    }
+
+    &--compact {
+        padding: 5px 15px;
+    }
+}
+
+/*
+Buttons (colors)
+
+Buttons with different colors.
+
+Markup:
+<button class="m-btn {{modifier_class}}">Button</button>
+
+.m-btn--primary - primary button
+.m-btn--secondary - secondary button
+
+Styleguide Buttons.Colors
+*/
+
+/*
+Buttons (sizes)
+
+Buttons with different sizes.
+
+Markup:
+<button class="m-btn {{modifier_class}}">Button</button>
+<button class="m-btn m-btn--primary {{modifier_class}}">Button</button>
+<button class="m-btn m-btn--secondary {{modifier_class}}">Button</button>
+
+.m-btn--large - large sized buttons
+.m-btn--compact - compact sized buttons
+
+Styleguide Buttons.Sizes
+*/

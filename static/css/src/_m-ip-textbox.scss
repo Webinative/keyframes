@@ -1,0 +1,130 @@
+/*
+Textbox (UI States)
+
+Input textbox user-interaction states.
+
+Markup:
+<div class="m-ip-textbox">
+    <label class="m-ip-textbox__label" for="first-name">First Name</label>
+    <span class="m-ip-textbox__help-text">Help text to fill in this value.</span>
+    <span class="m-ip-textbox__error">Error message.</span>
+    <input type="text" id="first-name" class="m-ip-textbox__input {{modifier_class}}" name="first_name" value="Magesh">
+</div>
+
+:focus - an element that received focus.
+
+Styleguide Textbox.UIStates
+*/
+.m-ip-textbox {
+    position: relative;
+
+    &__label {
+        display: block;
+        margin-block-end: 8px;
+        font-weight: bold;
+    }
+
+    &__input {
+        width: -webkit-fill-available;
+        border: 1px solid var(--ip-border);
+        padding: 10px 16px;
+        font-family: inherit;
+        font-size: 1rem;
+        background-color: var(--ip-bg);
+        outline: none;
+
+        ::placeholder {
+            color: var(--ip-placeholder-txt);
+        }
+
+        &:focus,
+        &.pseudo-class-focus {
+            border-color: var(--ip-border--focus);
+            background-color: var(--ip-bg--focus);
+        }
+
+        &:disabled {
+            border-color: var(--ip-border--disabled);
+            background-color: var(--ip-bg--disabled);
+        }
+    }
+
+    &__help-text {
+        display: block;
+        margin-block: 0 8px;
+        color: var(--ip-placeholder-txt);
+    }
+
+    &__error {
+        display: none;
+        margin-block: 8px;
+        color: var(--ip-error-txt);
+    }
+
+    &.is-loading {
+        &::after {
+            --icon-size: 24px;
+            content: '';
+            display: block;
+            position: absolute;
+            right: 12px;
+            bottom: calc(16px * 1.5 - 12px - 2px);
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background-image: url('../../images/ip-loading-spinner-48px.png');
+            background-size: var(--icon-size);
+            animation: rotate-loading-spinner .5s linear infinite;
+        }
+    }
+
+    &.has-error &__input {
+        border-color: var(--ip-error-txt);
+    }
+
+    &.has-error &__error {
+        display: block;
+    }
+}
+
+@keyframes rotate-loading-spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+Textbox (Validation states)
+
+Input textbox loading and error states.
+
+Markup:
+<div class="m-ip-textbox {{ modifier_class }}">
+    <label class="m-ip-textbox__label" for="error">Full name</label>
+    <p class="m-ip-textbox__error">How to correct this input.</p>
+    <input class="m-ip-textbox__input" type="text" id="error" name="full_name" value="Magesh Ravi">
+</div>
+
+.is-loading - Validation or background-activity in progress
+.has-error  - Input data is NOT valid
+
+Styleguide Textbox.ValidationStates
+*/
+
+/*
+Textbox (disabled)
+
+Input textbox disabled state.
+
+Markup:
+<div class="m-ip-textbox">
+    <label class="m-ip-textbox__label" for="disabled">Full name</label>
+    <input class="m-ip-textbox__input" type="text" id="disabled" name="full_name" placeholder="Disabled input"
+        disabled>
+</div>
+
+Styleguide Textbox.Disabled
+*/

@@ -1,0 +1,11 @@
+{
+    "title": "UI Library",
+    "source": "static/css/src/",
+    "destination": "styleguide/",
+    "builder": "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
+    "css": [
+        "../static/css/dist/kss_overrides.css",
+        "../static/css/dist/main.css"
+    ],
+    "js": []
+}

@@ -1,0 +1,136 @@
+/*
+Radio (UI states)
+
+Input radio user-interaction state.
+
+Markup:
+<div class="m-ip-radio">
+    <input type="radio" class="m-ip-radio__input" id="gender-male" name="gender" value="male">
+    <label class="m-ip-radio__label {{modifier_class}}" for="gender-male" tabindex="0">Male</label>
+</div>
+
+:focus - an element that received focus
+
+Styleguide Radio.UIStates
+*/
+.m-ip-radio {
+    --sprite-width: 72px;
+    --sprite-height: 72px;
+    --sprite-icon-size: 24px;
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        display: flex;
+        position: relative;
+        align-items: center;
+        width: fit-content;
+        outline: none;
+
+        &::before {
+            content: "";
+            display: block;
+            width: var(--sprite-icon-size);
+            height: var(--sprite-icon-size);
+            margin-inline-end: 8px;
+            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-position: 0 0;
+            background-size: var(--sprite-width) var(--sprite-height);
+            cursor: pointer;
+        }
+
+        &:hover::before,
+        &.pseudo-class-hover::before {
+            background-position-x: calc(-1 * var(--sprite-icon-size));
+        }
+
+        &:focus::before,
+        &.pseudo-class-focus::before {
+            background-position-x: calc(-1 * var(--sprite-icon-size));
+        }
+    }
+
+    &__input:disabled + &__label {
+        color: var(--ip-placeholder-txt);
+        opacity: .5;
+
+        &::before {
+            opacity: .5;
+        }
+
+        &:hover::before,
+        &.pseudo-class-hover::before {
+            background-position-x: 0;
+        }
+
+        &:focus::before,
+        &.pseudo-class-focus::before {
+            background-position-x: 0;
+        }
+    }
+
+    &__input:checked + &__label {
+        color: var(--ip-checked-txt);
+
+        &::before {
+            background-position-x: calc(-2 * var(--sprite-icon-size));
+        }
+
+        &:focus::before {
+            background-position-x: calc(-2 * var(--sprite-icon-size));
+        }
+    }
+
+    &--inline {
+        display: inline-block;
+        margin-inline-end: 20px;
+    }
+}
+
+/*
+Radio (inline)
+
+Input radio displayed inline.
+
+Markup:
+<div class="m-ip-radio m-ip-radio--inline">
+    <input type="radio" class="m-ip-radio__input" id="il-gender-male" name="il_gender" value="male">
+    <label class="m-ip-radio__label" for="il-gender-male" tabindex="0">Male</label>
+</div>
+<div class="m-ip-radio m-ip-radio--inline">
+    <input type="radio" class="m-ip-radio__input" id="il-gender-female" name="il_gender" value="female">
+    <label class="m-ip-radio__label" for="il-gender-female" tabindex="0">Female</label>
+</div>
+
+Styleguide Radio.Inline
+*/
+
+/*
+Radio (checked)
+
+Input radio checked state.
+
+Markup:
+<div class="m-ip-radio">
+    <input type="radio" class="m-ip-radio__input" id="gender-male" name="gender" value="male" checked>
+    <label class="m-ip-radio__label" for="gender-male" tabindex="0">Male</label>
+</div>
+
+Styleguide Radio.Checked
+*/
+
+/*
+Radio (disabled)
+
+Input radio disabled state.
+
+Markup:
+<div class="m-ip-radio">
+    <input type="radio" class="m-ip-radio__input" id="disabled-radio" disabled>
+    <label class="m-ip-radio__label" for="disabled-radio">Radio</label>
+</div>
+
+Styleguide Radio.Disabled
+*/
