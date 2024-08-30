@@ -6,7 +6,7 @@ Input checkbox user-interaction state.
 Markup:
 <div class="m-ip-checkbox">
     <input type="checkbox" class="m-ip-checkbox__input" id="my-checkbox">
-    <label class="m-ip-checkbox__label {{modifier_class}}" for="my-checkbox" tabindex="0">Checkbox</label>
+    <label class="m-ip-checkbox__label {{modifier_class}}" for="my-checkbox" tabindex="0"><div class="m-ip-checkbox__sprite"></div>Checkbox</label>
 </div>
 
 :focus - an element that received focus
@@ -29,29 +29,28 @@ Styleguide Checkbox.UIStates
         align-items: center;
         width: fit-content;
         outline: none;
+    }
 
-        &::before {
-            content: "";
-            display: block;
-            flex-shrink: 0;
-            width: var(--sprite-icon-size);
-            height: var(--sprite-icon-size);
-            margin-inline-end: 8px;
-            background-image: url('../../images/sprite-ip-ctrls.svg');
-            background-position: 0 calc(-1 * var(--sprite-icon-size));
-            background-size: var(--sprite-width) var(--sprite-height);
-            cursor: pointer;
-        }
+    &__label:hover &__sprite,
+    &__label.pseudo-class-hover &__sprite {
+        background: #fff;
+    }
 
-        &:hover::before,
-        &.pseudo-class-hover::before {
-            background-position-x: calc(-1 * var(--sprite-icon-size));
-        }
+    &__label:focus &__sprite,
+    &__label.pseudo-class-focus &__sprite {
+        background: #fff;
+    }
 
-        &:focus::before,
-        &.pseudo-class-focus::before {
-            background-position-x: calc(-1 * var(--sprite-icon-size));
-        }
+    &__sprite {
+        display: block;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        margin-inline-end: 10px;
+        border: 1px solid var(--ip-border);
+        background: transparent;
+        border-radius: 4px;
+        cursor: pointer;
     }
 
     &__input:disabled + &__label {
@@ -75,14 +74,27 @@ Styleguide Checkbox.UIStates
 
     &__input:checked + &__label {
         color: var(--ip-checked-txt);
+    }
+
+    &__input:checked + &__label &__sprite {
+        position: relative;
+        background: #098CEA;
 
         &::before {
-            background-position-x: calc(-2 * var(--sprite-icon-size));
+            content: "";
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            background-image: url("../../images/icons-sprite.svg");
+            background-size: 80px 40px;
         }
+    }
 
-        &:focus::before {
-            background-position-x: calc(-2 * var(--sprite-icon-size));
-        }
+    &__input:checked + &__label:hover &__sprite,
+    &__input:checked + &__label:focus &__sprite {
+        background: linear-gradient(180deg, #60B9F8 0%, #098CEA 100%);
     }
 
     &--inline {
@@ -99,11 +111,17 @@ Input checkbox displayed inline.
 Markup:
 <div class="m-ip-checkbox m-ip-checkbox--inline">
     <input type="checkbox" class="m-ip-checkbox__input" id="milk" name="milk">
-    <label class="m-ip-checkbox__label" for="milk" tabindex="0">Milk</label>
+    <label class="m-ip-checkbox__label" for="milk" tabindex="0">
+        <div class="m-ip-checkbox__sprite"></div>
+        Milk
+    </label>
 </div>
 <div class="m-ip-checkbox m-ip-checkbox--inline">
     <input type="checkbox" class="m-ip-checkbox__input" id="eggs" name="eggs">
-    <label class="m-ip-checkbox__label" for="eggs" tabindex="0">Eggs</label>
+    <label class="m-ip-checkbox__label" for="eggs" tabindex="0">
+        <div class="m-ip-checkbox__sprite"></div>
+        Eggs
+    </label>
 </div>
 
 Styleguide Checkbox.Inline
@@ -117,7 +135,7 @@ Input checkbox checked state.
 Markup:
 <div class="m-ip-checkbox">
     <input type="checkbox" class="m-ip-checkbox__input" id="my-checkbox" checked>
-    <label class="m-ip-checkbox__label" for="my-checkbox" tabindex="0">Checkbox</label>
+    <label class="m-ip-checkbox__label" for="my-checkbox" tabindex="0"><div class="m-ip-checkbox__sprite"></div>Checkbox</label>
 </div>
 
 Styleguide Checkbox.Checked
@@ -131,7 +149,10 @@ Inputheckbox disabled state.
 Markup:
 <div class="m-ip-checkbox">
     <input type="checkbox" class="m-ip-checkbox__input" id="disabled-checkbox" disabled>
-    <label class="m-ip-checkbox__label" for="disabled-checkbox">Checkbox</label>
+    <label class="m-ip-checkbox__label" for="disabled-checkbox">
+        <div class="m-ip-checkbox__sprite"></div>
+        Checkbox
+    </label>
 </div>
 
 Styleguide Checkbox.Disabled
