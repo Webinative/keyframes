@@ -1,22 +1,9 @@
 {
-  "name": "django-4.2-base",
+  "name": "keyframes",
   "version": "1.0.0",
-  "description": "Frontend build tool",
-  "main": "index.js",
-  "scripts": {
-    "compile:css": "sass --style compressed static/css/src/:static/css/dist/",
-    "prefix:css": "postcss -u autoprefixer -r static/css/dist/*.css",
-    "build:css": "yarn run compile:css && yarn run prefix:css",
-    "watch:css": "sass --style compressed --watch static/css/src/:static/css/dist/",
-    "build:js": "node static/js/bundle.js",
-    "watch:js": "node static/js/watch.js",
-    "kss": "./node_modules/.bin/kss --config kss-config.json",
-    "watch:kss": "onchange 'static/css/src/*.scss' -- npm run kss"
-  },
-  "repository": "git@github.com:Webinative/django-4.2-base.git",
   "author": "Magesh Ravi <magesh@webinative.com>",
-  "license": "MIT",
-  "private": true,
+  "repository": "git@github.com:Webinative/keyframes.git",
+  "main": "index.js",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "chokidar": "^3.6.0",
@@ -26,5 +13,18 @@
     "onchange": "^7.1.0",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0"
+  },
+  "description": "Frontend build tool",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "compile:css": "sass --style compressed static/css/src/:static/css/dist/",
+    "prefix:css": "postcss -u autoprefixer -r static/css/dist/*.css",
+    "build:css": "yarn run compile:css && yarn run prefix:css",
+    "watch:css": "sass --style compressed --watch static/css/src/:static/css/dist/",
+    "build:js": "node static/js/bundle.js",
+    "watch:js": "node static/js/watch.js",
+    "kss": "./node_modules/.bin/kss --config kss-config.json",
+    "watch:kss": "onchange 'static/css/src/*.scss' -- npm run kss"
   }
 }

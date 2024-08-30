@@ -3,6 +3,7 @@
     "source": "static/css/src/",
     "destination": "styleguide/",
     "builder": "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
+    "homepage": "kss-homepage.md",
     "css": [
         "../static/css/dist/kss_overrides.css",
         "../static/css/dist/main.css"
