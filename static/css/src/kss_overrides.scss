@@ -1,5 +1,7 @@
 .kss-modifier__example {
-    .m-ip-select__overlay {
+    .m-ip-select__overlay,
+    .m-alert__overlay,
+    .m-confirm__overlay {
         position: absolute
     }
 }
