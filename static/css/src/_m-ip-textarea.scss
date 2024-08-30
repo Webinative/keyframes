@@ -1,21 +1,21 @@
 /*
-Textbox (UI States)
+Textarea (UI States)
 
-Input textbox user-interaction states.
+Input textarea user-interaction states.
 
 Markup:
-<div class="m-ip-textbox">
-    <label class="m-ip-textbox__label" for="first-name">First Name</label>
-    <span class="m-ip-textbox__help-text">Help text to fill in this value.</span>
-    <span class="m-ip-textbox__error">Error message.</span>
-    <input type="text" id="first-name" class="m-ip-textbox__input {{modifier_class}}" name="first_name" value="Magesh">
+<div class="m-ip-textarea">
+    <label class="m-ip-textarea__label" for="first-name">First Name</label>
+    <span class="m-ip-textarea__help-text">Help text to fill in this value.</span>
+    <span class="m-ip-textarea__error">Error message.</span>
+    <textarea rows=3 type="text" id="first-name" class="m-ip-textarea__input {{modifier_class}}" name="first_name" value="Magesh"></textarea>
 </div>
 
 :focus - an element that received focus.
 
-Styleguide Textbox.UIStates
+Styleguide Textarea.UIStates
 */
-.m-ip-textbox {
+.m-ip-textarea {
     position: relative;
 
     &__label {
@@ -88,9 +88,9 @@ Styleguide Textbox.UIStates
     &.has-error &__error {
         display: block;
     }
-}
+    }
 
-@keyframes rotate-loading-spinner {
+    @keyframes rotate-loading-spinner {
     0% {
         transform: rotate(0);
     }
@@ -101,34 +101,34 @@ Styleguide Textbox.UIStates
 }
 
 /*
-Textbox (Validation states)
+Textarea (Validation states)
 
-Input textbox loading and error states.
+Input textarea loading and error states.
 
 Markup:
-<div class="m-ip-textbox {{ modifier_class }}">
-    <label class="m-ip-textbox__label" for="error">Full name</label>
-    <p class="m-ip-textbox__error">How to correct this input.</p>
-    <input class="m-ip-textbox__input" type="text" id="error" name="full_name" value="Magesh Ravi">
+<div class="m-ip-textarea {{ modifier_class }}">
+    <label class="m-ip-textarea__label" for="error">Full name</label>
+    <p class="m-ip-textarea__error">How to correct this input.</p>
+    <textarea rows=3 class="m-ip-textarea__input" type="text" id="error" name="full_name" value="Magesh Ravi"></textarea>
 </div>
 
 .is-loading - Validation or background-activity in progress
 .has-error  - Input data is NOT valid
 
-Styleguide Textbox.ValidationStates
+Styleguide Textarea.ValidationStates
 */
 
 /*
-Textbox (disabled)
+Textarea (disabled)
 
-Input textbox disabled state.
+Input textarea disabled state.
 
 Markup:
-<div class="m-ip-textbox">
-    <label class="m-ip-textbox__label" for="disabled">Full name</label>
-    <input class="m-ip-textbox__input" type="text" id="disabled" name="full_name" placeholder="Disabled input"
-        disabled>
+<div class="m-ip-textarea">
+    <label class="m-ip-textarea__label" for="disabled">Full name</label>
+    <textarea rows=3 class="m-ip-textarea__input" type="text" id="disabled" name="full_name" placeholder="Disabled input"
+        disabled></textarea>
 </div>
 
-Styleguide Textbox.Disabled
+Styleguide Textarea.Disabled
 */
