@@ -18,8 +18,9 @@ Styleguide Buttons.UIStates
 .m-btn {
     margin: 0;
     border: 1px solid #A7B7C0;
-    padding: 10px 22px;
+    padding: 9px 21px;
     color: var(--btn-txt);
+    font-family: var(--body-txt);
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
@@ -43,6 +44,13 @@ Styleguide Buttons.UIStates
     &:disabled,
     &.pseudo-class-disabled {
         opacity: .5;
+
+        &:hover,
+        &:active {
+            color: var(--btn-txt);
+            background: var(--btn-bg);
+            box-shadow: none;
+        }
     }
 
     &--primary {
@@ -58,6 +66,7 @@ Styleguide Buttons.UIStates
         --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
         border: none;
+        padding: 10px 22px;
     }
 
     &--warning {
@@ -73,6 +82,7 @@ Styleguide Buttons.UIStates
         --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
         border: none;
+        padding: 10px 22px;
     }
 
     &--danger {
@@ -88,14 +98,7 @@ Styleguide Buttons.UIStates
         --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
         border: none;
-    }
-
-    &--large {
-        padding: 15px 20px;
-    }
-
-    &--compact {
-        padding: 5px 15px;
+        padding: 10px 22px;
     }
 }
 
@@ -112,21 +115,4 @@ Markup:
 .m-btn--danger - danger button
 
 Styleguide Buttons.Colors
-*/
-
-/*
-Buttons (sizes)
-
-Buttons with different sizes.
-
-Markup:
-<button class="m-btn {{modifier_class}}">Button</button>
-<button class="m-btn m-btn--primary {{modifier_class}}">Button</button>
-<button class="m-btn m-btn--warning {{modifier_class}}">Button</button>
-<button class="m-btn m-btn--danger {{modifier_class}}">Button</button>
-
-.m-btn--large - large sized buttons
-.m-btn--compact - compact sized buttons
-
-Styleguide Buttons.Sizes
 */
