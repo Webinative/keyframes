@@ -32,9 +32,9 @@ cp -r styleguide $TARGET_FOLDER/
 echo "[INFO] Copying static folder..."
 cp -r static $TARGET_FOLDER/
 
-# update "static" folder path for fonts to work correctly
+# update "static" folder path (to work correctly in github pages)
 echo "[INFO] Replacing /static/ with /keyframes-styleguide/static/ ..."
-sed -i'' -e 's|url("/static/fonts|url("/keyframes-styleguide/static/fonts|g' $TARGET_FOLDER/static/css/dist/main.css
+sed -i'' -e 's|url("/static/|url("/keyframes-styleguide/static/|g' $TARGET_FOLDER/static/css/dist/main.css
 
 # remove source files
 if [ -d $CSS_SRC ]; then
