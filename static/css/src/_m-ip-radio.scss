@@ -30,25 +30,28 @@ Styleguide Radio.UIStates
         outline: none;
 
         &::before {
+            --icon-size: 24px;
+
             content: "";
             display: block;
-            width: var(--sprite-icon-size);
-            height: var(--sprite-icon-size);
-            margin-inline-end: 8px;
-            background-image: url('../../images/sprite-ip-ctrls.svg');
-            background-position: 0 0;
-            background-size: var(--sprite-width) var(--sprite-height);
+            box-sizing: border-box;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            margin-inline-end: 10px;
+            border: 1px solid var(--ip-border);
+            background: transparent;
+            border-radius: 50%;
             cursor: pointer;
         }
 
         &:hover::before,
         &.pseudo-class-hover::before {
-            background-position-x: calc(-1 * var(--sprite-icon-size));
+            background: #FFF;
         }
 
         &:focus::before,
         &.pseudo-class-focus::before {
-            background-position-x: calc(-1 * var(--sprite-icon-size));
+            background: #fff;
         }
     }
 
@@ -75,11 +78,27 @@ Styleguide Radio.UIStates
         color: var(--ip-checked-txt);
 
         &::before {
-            background-position-x: calc(-2 * var(--sprite-icon-size));
+            position: relative;
+            background: #098CEA;
+        }
+
+        &::after {
+            --icon-size: 12px;
+
+            content: "";
+            display: block;
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0px 1px 2px 0px #00000040;
         }
 
         &:focus::before {
-            background-position-x: calc(-2 * var(--sprite-icon-size));
+            background: linear-gradient(180deg, #60B9F8 0%, #098CEA 100%);
         }
     }
 
