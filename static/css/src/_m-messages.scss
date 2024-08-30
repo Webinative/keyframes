@@ -105,7 +105,7 @@ Markup:
     <li class="m-messages__item">
         <span class="m-messages__desc">
             <span class="m-messages__level">LEVEL</span>
-            This is a message.
+            This message is dismissible.
         </span>
         <span class="m-messages__icon {{modifier_class}}"></span>
     </li>
@@ -114,7 +114,7 @@ Markup:
     <li class="m-messages__item m-messages__item--error">
         <span class="m-messages__desc">
             <span class="m-messages__level">LEVEL</span>
-            This is a message.
+            This message is dismissible.
         </span>
         <span class="m-messages__icon {{modifier_class}}"></span>
     </li>
@@ -123,7 +123,7 @@ Markup:
     <li class="m-messages__item m-messages__item--warning">
         <span class="m-messages__desc">
             <span class="m-messages__level">LEVEL</span>
-            This is a message.
+            This message is dismissible.
         </span>
         <span class="m-messages__icon {{modifier_class}}"></span>
     </li>
@@ -132,7 +132,7 @@ Markup:
     <li class="m-messages__item m-messages__item--success">
         <span class="m-messages__desc">
             <span class="m-messages__level">LEVEL</span>
-            This is a message.
+            This message is dismissible.
         </span>
         <span class="m-messages__icon {{modifier_class}}"></span>
     </li>
@@ -140,5 +140,47 @@ Markup:
 
 :hover - mouse over state
 
-Styleguide Messages.dismissible
+Styleguide Messages.Dismissible
+*/
+
+/*
+Non dismissible messages
+
+Non dismissible Messages.
+
+Markup:
+<ul class="m-messages">
+    <li class="m-messages__item">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This message is NOT dismissible.
+        </span>
+    </li>
+</ul>
+<ul class="m-messages">
+    <li class="m-messages__item m-messages__item--error">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This message is NOT dismissible.
+        </span>
+    </li>
+</ul>
+<ul class="m-messages">
+    <li class="m-messages__item m-messages__item--warning">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This message is NOT dismissible.
+        </span>
+    </li>
+</ul>
+<ul class="m-messages">
+    <li class="m-messages__item m-messages__item--success">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This message is NOT dismissible.
+        </span>
+    </li>
+</ul>
+
+Styleguide Messages.Nondismissible
 */
