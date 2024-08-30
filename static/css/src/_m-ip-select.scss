@@ -87,7 +87,7 @@ Styleguide SelectMenu.UIStates
             display: inline-block;
             width: var(--icon-size);
             height: var(--icon-size);
-            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-image: url('/static/images/sprite-ip-ctrls.svg');
             background-position: calc(-1 * var(--icon-size)) calc(-2 * var(--icon-size));
             background-size: var(--sprite-width) var(--sprite-height);
             cursor: pointer;
@@ -131,7 +131,7 @@ Styleguide SelectMenu.UIStates
             flex-shrink: 0;
             width: var(--icon-size);
             height: var(--icon-size);
-            background-image: url('../../images/icons-sprite.svg');
+            background-image: url('/static/images/icons-sprite.svg');
             background-repeat: no-repeat;
             background-position: calc(-1 * var(--icon-size)) 0;
             background-size: calc(4 * var(--icon-size)) calc(2 * var(--icon-size));
@@ -192,7 +192,7 @@ Styleguide SelectMenu.UIStates
         &::-webkit-search-cancel-button {
             width: var(--icon-size);
             height: var(--icon-size);
-            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-image: url('/static/images/sprite-ip-ctrls.svg');
             background-position: calc(-2 * var(--icon-size)) calc(-2 * var(--icon-size));
             background-size: var(--sprite-width) var(--sprite-height);
             -webkit-appearance: none;
@@ -247,7 +247,7 @@ Styleguide SelectMenu.UIStates
             display: block;
             width: var(--icon-size);
             height: var(--icon-size);
-            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-image: url('/static/images/sprite-ip-ctrls.svg');
             background-position: 0 calc(-1 * var(--icon-size));
             background-size: var(--sprite-width) var(--sprite-height);
         }

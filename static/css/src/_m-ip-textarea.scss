@@ -79,7 +79,7 @@ Styleguide Textarea.UIStates
             bottom: calc(16px * 1.5 - 12px - 2px);
             width: var(--icon-size);
             height: var(--icon-size);
-            background-image: url('../../images/ip-loading-spinner-48px.png');
+            background-image: url('/static/images/ip-loading-spinner-48px.png');
             background-size: var(--icon-size);
             animation: rotate-loading-spinner .5s linear infinite;
         }

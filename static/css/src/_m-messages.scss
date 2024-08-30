@@ -67,7 +67,7 @@ Styleguide Messages.Levels
         align-self: center;
         width: var(--icon-size);
         height: var(--icon-size);
-        background-image: url('../../images/icons-sprite.svg');
+        background-image: url('/static/images/icons-sprite.svg');
         background-position: 0 calc(-1 * var(--icon-size));
         background-size: var(--sprite-width) var(--sprite-height);
     }
