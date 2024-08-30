@@ -46,8 +46,8 @@ Styleguide SelectMenu.UIStates
     --sprite-height: 72px;
     --icon-size: 24px;
 
-    --opt-txt--hover: inherit;
-    --opt-bg--hover: #d9d9d9;
+    --opt-txt--hover: #fff;
+    --opt-bg--hover: linear-gradient(180deg, #60B9F8 0%, #098CEA 100%);
 
     position: relative;
 
@@ -58,9 +58,10 @@ Styleguide SelectMenu.UIStates
         background-color: rgba(0, 0, 0, .1);
         inset: 0;
     }
-        &.is-open &__overlay {
-            display: block;
-        }
+
+    &.is-open &__overlay {
+        display: block;
+    }
 
     &__tags-wrapper {
         display: flex;
@@ -103,7 +104,8 @@ Styleguide SelectMenu.UIStates
 
     &__label {
         display: block;
-        margin-block-end: 6px;
+        margin-block: 0 6px;
+        color: var(--heading-txt);
         font-weight: bold;
     }
 
@@ -111,8 +113,9 @@ Styleguide SelectMenu.UIStates
         display: flex;
         width: -webkit-fill-available;
         border: 1px solid var(--ip-border);
-        padding: 10px 14px;
-        background-color: var(--ip-bg);
+        padding: 8px 12px;
+        background-color: transparent;
+        border-radius: 8px;
         outline: none;
 
         &:hover {
@@ -121,17 +124,17 @@ Styleguide SelectMenu.UIStates
         }
 
         &::after {
-            --icon-size: 24px;
+            --icon-size: 20px;
 
             content: '';
             display: block;
             flex-shrink: 0;
             width: var(--icon-size);
             height: var(--icon-size);
-            background-image: url('../../images/sprite-ip-ctrls.svg');
+            background-image: url('../../images/icons-sprite.svg');
             background-repeat: no-repeat;
-            background-position: 0 calc(-2 * var(--icon-size));
-            background-size: var(--sprite-width) var(--sprite-height);
+            background-position: calc(-1 * var(--icon-size)) 0;
+            background-size: calc(4 * var(--icon-size)) calc(2 * var(--icon-size));
         }
     }
 
@@ -151,25 +154,26 @@ Styleguide SelectMenu.UIStates
         visibility: hidden;
         position: absolute;
         z-index: -1;
-        bottom: 0;
+        bottom: -6px;
         left: 0;
         width: -webkit-fill-available;
         border: 1px solid var(--ip-border);
         padding: 4px;
         background-color: white;
+        border-radius: 8px;
         box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
         transform: translateY(100%) translateY(-12px);
         opacity: 0;
         transition: all .2s linear;
     }
 
-        &.is-open &__options-wrapper {
-            visibility: visible;
-            z-index: var(--menu-zindex);
-            transform: translateY(100%) translateY(2px);
-            opacity: 1;
-            transition: all .2s linear;
-        }
+    &.is-open &__options-wrapper {
+        visibility: visible;
+        z-index: var(--menu-zindex);
+        transform: translateY(100%) translateY(2px);
+        opacity: 1;
+        transition: all .2s linear;
+    }
 
     &__search {
         width: -webkit-fill-available;
@@ -219,12 +223,18 @@ Styleguide SelectMenu.UIStates
     }
 
     &__opt-item {
-        padding: 5px;
+        padding: 10px 8px;
+        color: #000;
         user-select: none;
+
+        &:nth-child(even) {
+            background-color: #E6EEF1;
+        }
 
         &:hover {
             color: var(--opt-txt--hover);
-            background-color: var(--opt-bg--hover);
+            background: var(--opt-bg--hover);
+            cursor: pointer;
         }
     }
 
