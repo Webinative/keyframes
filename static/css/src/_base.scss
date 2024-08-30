@@ -134,23 +134,11 @@ Styleguide Base.Blockquote
 */
 
 blockquote {
-    position: relative;
     margin: 0;
     padding-inline: 16px;
     color: #97AAB4;
     font-style: italic;
-
-    &::before {
-        content: "";
-
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background-color: #A7B7C0;
-    }
+    border-inline-start: 4px solid #A7B7C0;
 }
 
 /*
@@ -173,6 +161,10 @@ ol {
     padding: 0;
 }
 
+li {
+    margin-block-end: 6px;
+}
+
 /*
 Unordered list
 
@@ -191,4 +183,8 @@ Styleguide Base.UnorderedList
 ul {
     margin: 0;
     padding: 0;
+}
+
+li {
+    margin-block-end: 6px;
 }
