@@ -44,6 +44,13 @@ Styleguide Buttons.UIStates
     &:disabled,
     &.pseudo-class-disabled {
         opacity: .5;
+
+        &:hover,
+        &:active {
+            color: var(--btn-txt);
+            background: var(--btn-bg);
+            box-shadow: none;
+        }
     }
 
     &--primary {
