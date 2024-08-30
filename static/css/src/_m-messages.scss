@@ -6,9 +6,11 @@ Messages with different levels.
 Markup:
 <ul class="m-messages">
     <li class="m-messages__item {{modifier_class}}">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This is a message.
+        </span>
         <span class="m-messages__icon"></span>
-        <span class="m-messages__level">Level</span>
-        <span class="m-messages__desc">This is a message.</span>
     </li>
 </ul>
 
@@ -19,14 +21,14 @@ Markup:
 Styleguide Messages.Levels
 */
 .m-messages {
-    --info-txt: #3896DA;
-    --info-bg: #E6EEF4;
-    --error-txt: #DC5A5A;
-    --error-bg: #F7E9E9;
-    --success-txt: #67A749;
-    --success-bg: #E2EFDC;
-    --warning-txt: #AC951E;
-    --warning-bg: #F3F0D4;
+    --info-txt: #1A729D;
+    --info-bg: #DAEEF8;
+    --error-txt: #B53D2D;
+    --error-bg: #F6E0DD;
+    --success-txt: #307B2E;
+    --success-bg: #DEF6DD;
+    --warning-txt: #956312;
+    --warning-bg: #F6EFDD;
 
     padding: 0;
     list-style: none;
@@ -36,9 +38,10 @@ Styleguide Messages.Levels
         column-gap: 10px;
         width: fit-content;
         margin-block-end: 20px;
-        padding: 10px;
+        padding: 8px 20px;
         color: var(--info-txt);
         background-color: var(--info-bg);
+        border-radius: 20px;
 
         &--error {
             color: var(--error-txt);
@@ -57,19 +60,20 @@ Styleguide Messages.Levels
     }
 
     &__icon {
-        --sprite-width: 96px;
-        --sprite-height: 24px;
-        --icon-size: 24px;
+        --sprite-width: 80px;
+        --sprite-height: 40px;
+        --icon-size: 20px;
 
+        align-self: center;
         width: var(--icon-size);
         height: var(--icon-size);
-        background-image: url('../../images/sprite-message-icons-24px.svg');
+        background-image: url('../../images/icons-sprite.svg');
+        background-position: 0 calc(-1 * var(--icon-size));
         background-size: var(--sprite-width) var(--sprite-height);
-        background-position: calc(-2 * var(--icon-size)) 0;
     }
 
     &__item--error &__icon {
-        background-position-x: 0;
+        background-position-x: calc(-2 * var(--icon-size));
     }
 
     &__item--success &__icon {
@@ -80,7 +84,61 @@ Styleguide Messages.Levels
         background-position-x: calc(-3 * var(--icon-size));
     }
 
+    &__icon:hover {
+        background-color: #D65A5A;
+        background-position: calc(-2 * var(--icon-size)) 0;
+        border-radius: 50%;
+    }
+
     &__level {
         font-weight: bold;
     }
 }
+
+/*
+Dismissible messages
+
+Dismissible Messages.
+
+Markup:
+<ul class="m-messages">
+    <li class="m-messages__item">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This is a message.
+        </span>
+        <span class="m-messages__icon {{modifier_class}}"></span>
+    </li>
+</ul>
+<ul class="m-messages">
+    <li class="m-messages__item m-messages__item--error">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This is a message.
+        </span>
+        <span class="m-messages__icon {{modifier_class}}"></span>
+    </li>
+</ul>
+<ul class="m-messages">
+    <li class="m-messages__item m-messages__item--warning">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This is a message.
+        </span>
+        <span class="m-messages__icon {{modifier_class}}"></span>
+    </li>
+</ul>
+<ul class="m-messages">
+    <li class="m-messages__item m-messages__item--success">
+        <span class="m-messages__desc">
+            <span class="m-messages__level">LEVEL</span>
+            This is a message.
+        </span>
+        <span class="m-messages__icon {{modifier_class}}"></span>
+    </li>
+</ul>
+
+:hover - mouse over state
+
+Styleguide Messages.dismissible
+*/
