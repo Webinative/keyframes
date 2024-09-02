@@ -22,8 +22,8 @@ Styleguide Dialog.Confirm
 */
 
 .m-confirm {
-    --overlay-zindex: 1;
     --window-zindex: 10;
+    --overlay-zindex: 1;
 
     &__overlay {
         display: block;
@@ -44,9 +44,9 @@ Styleguide Dialog.Confirm
         background-color: #fff;
         border-radius: 16px;
         box-shadow:
-        0px 2px 4px 0px #00000033,
-        0px 4px 6px 2px #0000001F,
-        0px 6px 8px 4px #0000000F;
+            0px 2px 4px 0px #00000033,
+            0px 4px 6px 2px #0000001F,
+            0px 6px 8px 4px #0000000F;
         transform: translate(-50%, -50%);
     }
 

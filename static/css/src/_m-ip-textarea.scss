@@ -88,9 +88,9 @@ Styleguide Textarea.UIStates
     &.has-error &__error {
         display: block;
     }
-    }
+}
 
-    @keyframes rotate-loading-spinner {
+@keyframes rotate-loading-spinner {
     0% {
         transform: rotate(0);
     }
