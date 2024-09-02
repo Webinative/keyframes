@@ -149,12 +149,21 @@ Styleguide SelectMenu.UIStates
     }
 
     &__opt-item {
+        margin-block-end: 0;
         padding: 10px 8px;
         color: #000;
         user-select: none;
 
         &:nth-child(even) {
             background-color: #E6EEF1;
+        }
+
+        &:first-child {
+            border-radius: 5px 5px 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 0 5px 5px;
         }
 
         &:hover {
