@@ -150,37 +150,17 @@ Non dismissible Messages.
 
 Markup:
 <ul class="m-messages">
-    <li class="m-messages__item">
+    <li class="m-messages__item {{modifier_class}}">
         <span class="m-messages__desc">
             <span class="m-messages__level">LEVEL</span>
             This message is NOT dismissible.
         </span>
     </li>
 </ul>
-<ul class="m-messages">
-    <li class="m-messages__item m-messages__item--error">
-        <span class="m-messages__desc">
-            <span class="m-messages__level">LEVEL</span>
-            This message is NOT dismissible.
-        </span>
-    </li>
-</ul>
-<ul class="m-messages">
-    <li class="m-messages__item m-messages__item--warning">
-        <span class="m-messages__desc">
-            <span class="m-messages__level">LEVEL</span>
-            This message is NOT dismissible.
-        </span>
-    </li>
-</ul>
-<ul class="m-messages">
-    <li class="m-messages__item m-messages__item--success">
-        <span class="m-messages__desc">
-            <span class="m-messages__level">LEVEL</span>
-            This message is NOT dismissible.
-        </span>
-    </li>
-</ul>
+
+.m-messages__item--error - error message
+.m-messages__item--warning - warning message
+.m-messages__item--success - success message
 
 Styleguide Messages.Nondismissible
 */
