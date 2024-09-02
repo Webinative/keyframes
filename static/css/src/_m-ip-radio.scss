@@ -28,6 +28,7 @@ Styleguide Radio.UIStates
         align-items: center;
         width: fit-content;
         outline: none;
+        cursor: pointer;
 
         &::before {
             --icon-size: 24px;
@@ -41,7 +42,6 @@ Styleguide Radio.UIStates
             border: 1px solid var(--ip-border);
             background: transparent;
             border-radius: 50%;
-            cursor: pointer;
         }
 
         &:hover::before,
@@ -79,8 +79,8 @@ Styleguide Radio.UIStates
 
         &::before {
             position: relative;
-            background: #098CEA;
             border: none;
+            background: #098CEA;
         }
 
         &::after {

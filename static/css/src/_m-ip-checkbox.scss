@@ -29,6 +29,7 @@ Styleguide Checkbox.UIStates
         align-items: center;
         width: fit-content;
         outline: none;
+        cursor: pointer;
 
         &::before {
             content: "";
@@ -41,7 +42,6 @@ Styleguide Checkbox.UIStates
             border: 1px solid var(--ip-border);
             background: transparent;
             border-radius: 4px;
-            cursor: pointer;
         }
 
         &:hover::before,
