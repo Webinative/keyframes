@@ -45,7 +45,7 @@ Styleguide Textarea.UIStates
         &.pseudo-class-focus {
             border-color: var(--ip-border--focus);
             background-color: var(--ip-bg--focus);
-            box-shadow: 0px 3px 2px 0px #00000040 inset;
+            box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.251) inset;
         }
 
         &:disabled {
