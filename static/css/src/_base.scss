@@ -157,13 +157,13 @@ Markup:
 Styleguide Base.OrderedList
 */
 
-ol {
+ol, ul {
     margin: 0;
     padding: 0;
-}
 
-li {
-    margin-block-end: 6px;
+    li {
+        margin-block-end: 6px;
+    }
 }
 
 /*
@@ -180,12 +180,3 @@ Markup:
 
 Styleguide Base.UnorderedList
 */
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    margin-block-end: 6px;
-}
