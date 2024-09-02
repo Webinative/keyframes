@@ -81,7 +81,7 @@ Styleguide Checkbox.UIStates
             --sprite-icon-size: 24px;
 
             position: relative;
-            background: #098CEA;
+            background: var(--primary-color);
             border: none;
         }
 
@@ -98,7 +98,7 @@ Styleguide Checkbox.UIStates
 
         &:hover::before,
         &:focus::before {
-            background: linear-gradient(180deg, #60B9F8 0%, #098CEA 100%);
+            background: var(--primary-gradient);
         }
     }
 

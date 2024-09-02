@@ -1,7 +1,7 @@
 /*
 Select Menu
 
-Select-menu.
+Standard dropdown-menu.
 
 Markup:
 <div class="m-ip-select {{ modifier_class }}">
@@ -46,7 +46,7 @@ Styleguide SelectMenu.UIStates
     --icon-size: 24px;
 
     --opt-txt--hover: #fff;
-    --opt-bg--hover: linear-gradient(180deg, #60B9F8 0%, #098CEA 100%);
+    --opt-bg--hover: var(--primary-gradient);
 
     position: relative;
 
@@ -155,7 +155,9 @@ Styleguide SelectMenu.UIStates
         user-select: none;
 
         &:nth-child(even) {
-            background-color: #E6EEF1;
+            --alt-row-bg: #E6EEF1;
+
+            background-color: var(--alt-row-bg);
         }
 
         &:first-child {

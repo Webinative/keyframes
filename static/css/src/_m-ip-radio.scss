@@ -80,7 +80,7 @@ Styleguide Radio.UIStates
         &::before {
             position: relative;
             border: none;
-            background: #098CEA;
+            background: var(--primary-color);
         }
 
         &::after {
@@ -99,7 +99,7 @@ Styleguide Radio.UIStates
         }
 
         &:focus::before {
-            background: linear-gradient(180deg, #60B9F8 0%, #098CEA 100%);
+            background: var(--primary-gradient);
         }
     }
 
