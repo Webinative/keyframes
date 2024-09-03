@@ -40,18 +40,18 @@ Styleguide Radio.UIStates
             height: var(--icon-size);
             margin-inline-end: 10px;
             border: 1px solid var(--ip-border);
-            background: transparent;
+            background: var(--ip-bg);
             border-radius: 50%;
         }
 
         &:hover::before,
         &.pseudo-class-hover::before {
-            background: #FFF;
+            background: var(--ip-bg--hover);
         }
 
         &:focus::before,
         &.pseudo-class-focus::before {
-            background: #fff;
+            background: var(--ip-bg--focus);
         }
     }
 

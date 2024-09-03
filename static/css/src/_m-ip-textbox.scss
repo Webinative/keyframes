@@ -32,7 +32,7 @@ Styleguide Textbox.UIStates
         color: var(--body-txt);
         font-family: inherit;
         font-size: 1rem;
-        background-color: transparent;
+        background-color: var(--ip-bg);
         border-radius: 8px;
         outline: none;
         cursor: pointer;

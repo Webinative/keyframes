@@ -40,18 +40,18 @@ Styleguide Checkbox.UIStates
             height: var(--sprite-icon-size);
             margin-inline-end: 10px;
             border: 1px solid var(--ip-border);
-            background: transparent;
+            background: var(--ip-bg);
             border-radius: 4px;
         }
 
         &:hover::before,
         &.pseudo-class-hover::before {
-            background: #fff;
+            background: var(--ip-bg--hover);
         }
 
         &:focus::before,
         &.pseudo-class-focus::before {
-            background: #fff;
+            background: var(--ip-bg--focus);
         }
     }
 

@@ -37,8 +37,8 @@ Markup:
 Styleguide SelectMenu.UIStates
 */
 .m-ip-select {
-    --overlay-zindex: 1;
     --menu-zindex: 10;
+    --overlay-zindex: 1;
     --tag-bg: #a5a5a5;
 
     --sprite-width: 72px;
@@ -47,6 +47,7 @@ Styleguide SelectMenu.UIStates
 
     --opt-txt--hover: #fff;
     --opt-bg--hover: var(--primary-gradient);
+    --alt-row-bg: #E6EEF1;
 
     position: relative;
 
@@ -74,7 +75,7 @@ Styleguide SelectMenu.UIStates
         width: -webkit-fill-available;
         border: 1px solid var(--ip-border);
         padding: 8px 12px;
-        background-color: transparent;
+        background-color: var(--ip-bg);
         border-radius: 8px;
         outline: none;
 
@@ -155,7 +156,6 @@ Styleguide SelectMenu.UIStates
         user-select: none;
 
         &:nth-child(even) {
-            --alt-row-bg: #E6EEF1;
 
             background-color: var(--alt-row-bg);
         }

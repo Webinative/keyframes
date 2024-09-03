@@ -11,7 +11,8 @@
     --ip-border: #A7B7C0;
     --ip-border--focus: #898989;
     --ip-border--disabled: hsla(0, 0%, 85%, 0.5);
-    --ip-bg: #fff;
+    --ip-bg: transparent;
+    --ip-bg--hover: #fff;
     --ip-bg--focus: #fff;
     --ip-bg--disabled: hsla(0, 0%, 98%, 0.5);
     --ip-placeholder-txt: #97AAB4;
@@ -21,7 +22,7 @@
     --btn-txt: #5E7581;
     --btn-txt--hover: #5E7581;
     --btn-txt--active: #5E7581;
-    --btn-bg: #fff;
+    --btn-bg: transparent;
     --btn-bg--hover: #fff;
     --btn-bg--active: #DDECF1;
     --btn-box-shadow--hover: 0px 2px 2px 0px #7C929F40;
