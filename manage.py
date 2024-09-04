@@ -11,6 +11,7 @@ def main():
 
     if settings.DEBUG:
         if os.getenv("RUN_MAIN") or os.getenv("WERKZEUG_RUN_MAIN"):
+            # pylint: disable=import-error
             import debugpy
 
             debugpy.listen(("0.0.0.0", 3000))
