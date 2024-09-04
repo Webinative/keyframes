@@ -1,0 +1,83 @@
+/*
+Pills (Segmented controls)
+
+Tab-like controls for use with icons inspired by macOS.
+
+Markup:
+<nav class="m-pill">
+    <a href="#" class="m-pill__link is-active">
+        Option 1
+    </a>
+    <a href="#" class="m-pill__link">
+        Option 2
+    </a>
+    <a href="#" class="m-pill__link">
+        Option 3
+    </a>
+    <a href="#" class="m-pill__link">
+        Option 4
+    </a>
+</nav>
+
+Styleguide SegmentedControl
+*/
+.m-pill {
+  --seg-ctrl-bg: var(--btn-bg);
+  --seg-ctrl-bg--hover: var(--btn-bg--hover);
+  --seg-ctrl-bg--active: var(--btn-bg--active);
+  --seg-ctrl-box-shadow--active: 0px 3px 2px 0px rgba(0, 0, 0, 0.251) inset;
+  --seg-ctrl-border: var(--ip-border);
+
+  display: flex;
+  width: fit-content;
+  overflow: hidden;
+  border: 1px solid var(--seg-ctrl-border);
+  border-radius: 22px;
+
+  &__link {
+    display: block;
+    position: relative;
+    border: none;
+    padding: 10px 16px;
+    color: inherit;
+    color: var(--heading-txt);
+    text-decoration: none;
+    background-color: var(--seg-ctrl-bg);
+
+    &:first-child {
+      padding: 10px 16px 10px 22px;
+      border-radius: 22px 0 0 22px;
+    }
+
+    &:last-child {
+      padding: 10px 22px 10px 16px;
+      border-radius: 0 22px 22px 0;
+    }
+
+    &:hover {
+      border-block-end: none;
+      background-color: var(--seg-ctrl-bg--hover);
+    }
+
+    &:visited {
+      color: var(--heading-txt);
+    }
+
+    &.is-active {
+      font-weight: 700;
+      background-color: var(--seg-ctrl-bg--active);
+      box-shadow: var(--seg-ctrl-box-shadow--active);
+    }
+
+    & + &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--seg-ctrl-border);
+    }
+  }
+}
