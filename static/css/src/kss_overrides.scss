@@ -1,5 +1,11 @@
 .kss-modifier__example {
-    .m-ip-select__overlay {
-        position: absolute
-    }
+  .m-ip-select__overlay,
+  .m-alert__overlay,
+  .m-confirm__overlay {
+    position: absolute;
+  }
+}
+
+.kss-modifier__wrapper {
+  background-color: var(--body-bg);
 }

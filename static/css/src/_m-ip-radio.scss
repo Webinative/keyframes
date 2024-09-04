@@ -14,79 +14,99 @@ Markup:
 Styleguide Radio.UIStates
 */
 .m-ip-radio {
-    --sprite-width: 72px;
-    --sprite-height: 72px;
-    --sprite-icon-size: 24px;
+  --sprite-width: 72px;
+  --sprite-height: 72px;
+  --sprite-icon-size: 24px;
 
-    &__input {
-        display: none;
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: fit-content;
+    outline: none;
+    cursor: pointer;
+
+    &::before {
+      --icon-size: 24px;
+
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      margin-inline-end: 10px;
+      border: 1px solid var(--ip-border);
+      background: var(--ip-bg);
+      border-radius: 50%;
     }
 
-    &__label {
-        display: flex;
-        position: relative;
-        align-items: center;
-        width: fit-content;
-        outline: none;
-
-        &::before {
-            content: "";
-            display: block;
-            width: var(--sprite-icon-size);
-            height: var(--sprite-icon-size);
-            margin-inline-end: 8px;
-            background-image: url('../../images/sprite-ip-ctrls.svg');
-            background-position: 0 0;
-            background-size: var(--sprite-width) var(--sprite-height);
-            cursor: pointer;
-        }
-
-        &:hover::before,
-        &.pseudo-class-hover::before {
-            background-position-x: calc(-1 * var(--sprite-icon-size));
-        }
-
-        &:focus::before,
-        &.pseudo-class-focus::before {
-            background-position-x: calc(-1 * var(--sprite-icon-size));
-        }
+    &:hover::before,
+    &.pseudo-class-hover::before {
+      background: var(--ip-bg--hover);
     }
 
-    &__input:disabled + &__label {
-        color: var(--ip-placeholder-txt);
-        opacity: .5;
+    &:focus::before,
+    &.pseudo-class-focus::before {
+      background: var(--ip-bg--focus);
+    }
+  }
 
-        &::before {
-            opacity: .5;
-        }
+  &__input:disabled + &__label {
+    color: var(--ip-placeholder-txt);
+    opacity: 0.5;
 
-        &:hover::before,
-        &.pseudo-class-hover::before {
-            background-position-x: 0;
-        }
-
-        &:focus::before,
-        &.pseudo-class-focus::before {
-            background-position-x: 0;
-        }
+    &::before {
+      opacity: 0.5;
     }
 
-    &__input:checked + &__label {
-        color: var(--ip-checked-txt);
-
-        &::before {
-            background-position-x: calc(-2 * var(--sprite-icon-size));
-        }
-
-        &:focus::before {
-            background-position-x: calc(-2 * var(--sprite-icon-size));
-        }
+    &:hover::before,
+    &.pseudo-class-hover::before {
+      background-position-x: 0;
     }
 
-    &--inline {
-        display: inline-block;
-        margin-inline-end: 20px;
+    &:focus::before,
+    &.pseudo-class-focus::before {
+      background-position-x: 0;
     }
+  }
+
+  &__input:checked + &__label {
+    color: var(--ip-checked-txt);
+
+    &::before {
+      position: relative;
+      border: none;
+      background: var(--primary-color);
+    }
+
+    &::after {
+      --icon-size: 12px;
+
+      content: "";
+      display: block;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0px 1px 2px 0px #00000040;
+    }
+
+    &:focus::before {
+      background: var(--primary-gradient);
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    margin-inline-end: 20px;
+  }
 }
 
 /*

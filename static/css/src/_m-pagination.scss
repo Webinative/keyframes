@@ -17,51 +17,46 @@ Markup:
 Styleguide Pagination.Current
 */
 .m-pagination {
-    display: flex;
-    column-gap: 16px;
-    justify-content: center;
-    margin-block: 4px;
-    padding: 0;
-    list-style: none;
+  display: flex;
+  column-gap: 16px;
+  justify-content: center;
+  margin-block: 4px;
+  padding: 0;
+  list-style: none;
 
-    &:hover > &__link:not(.current):not(:hover) {
-        border-color: transparent;
+  &__separator {
+    min-width: 32px; /* 16px + 32px + 16px = 64px */
+  }
+
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    min-width: 44px;
+    border: 1px solid var(--ip-border);
+    padding: 10px 12px;
+    color: var(--heading-txt);
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--btn-bg);
+    border-radius: 50%;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      color: var(--btn-txt--hover);
+      background-color: var(--btn-bg--hover);
+      box-shadow: none;
     }
 
-    &__separator {
-        display: flex;
-        align-items: center;
-        min-width: 10px; /* 16px + 10px + 16px = 42px */
-
-        &::before {
-            content: "...";
-            display: block;
-        }
+    &:visited,
+    &:visited:hover {
+      color: var(--heading-txt);
     }
 
-    &__link {
-        display: block;
-        box-sizing: border-box;
-        min-width: 44px;
-        padding: 10px 16px;
-        color: var(--btn-txt);
-        text-align: center;
-        text-decoration: none;
-        background-color: var(--btn-bg);
-        box-shadow: var(--btn-box-shadow);
-        outline: none;
-
-        &:hover,
-        &:focus {
-            color: var(--btn-txt--hover);
-            background-color: var(--btn-bg--hover);
-            box-shadow: var(--btn-box-shadow--hover);
-        }
-
-        &.current {
-            color: var(--btn-txt--active);
-            background-color: var(--btn-bg--active);
-            box-shadow: var(--btn-box-shadow--active);
-        }
+    &.current {
+      color: var(--btn-txt--active);
+      background-color: var(--btn-bg--active);
+      box-shadow: var(--btn-box-shadow--active);
     }
+  }
 }

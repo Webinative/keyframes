@@ -6,7 +6,8 @@ Buttons user-interaction states.
 Markup:
 <button class="m-btn {{modifier_class}}">Button</button>
 <button class="m-btn m-btn--primary {{modifier_class}}">Button</button>
-<button class="m-btn m-btn--secondary {{modifier_class}}">Button</button>
+<button class="m-btn m-btn--warning {{modifier_class}}">Button</button>
+<button class="m-btn m-btn--danger {{modifier_class}}">Button</button>
 
 :hover - mouse over state
 :active - pressed state
@@ -15,78 +16,90 @@ Markup:
 Styleguide Buttons.UIStates
 */
 .m-btn {
-    margin: 0;
+  margin: 0;
+  border: 1px solid #a7b7c0;
+  padding: 9px 21px;
+  color: var(--btn-txt);
+  font-family: var(--body-txt);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  background: var(--btn-bg);
+  border-radius: 22px;
+
+  &:enabled:hover,
+  &.pseudo-class-hover {
+    color: var(--btn-txt--hover);
+    background: var(--btn-bg--hover);
+    box-shadow: var(--btn-box-shadow--hover);
+  }
+
+  &:enabled:active,
+  &.pseudo-class-active {
+    color: var(--btn-txt--active);
+    background: var(--btn-bg--active);
+    box-shadow: var(--btn-box-shadow--active);
+  }
+
+  &:disabled,
+  &.pseudo-class-disabled {
+    opacity: 0.5;
+
+    &:hover,
+    &:active {
+      color: var(--btn-txt);
+      background: var(--btn-bg);
+      box-shadow: none;
+    }
+  }
+
+  &--primary {
+    --btn-bg: #098cea;
+    --btn-bg--hover: linear-gradient(to bottom, #60b9f8 0%, #098cea 100%);
+    --btn-bg--active: #087fd3;
+
+    --btn-txt: white;
+    --btn-txt--hover: white;
+    --btn-txt--active: white;
+
+    --btn-box-shadow--hover: 0px 2px 2px 0px #098cea59;
+    --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
+
     border: none;
-    padding: 10px 16px;
-    color: var(--btn-txt);
-    font-weight: bold;
-    background-color: var(--btn-bg);
-    box-shadow: var(--btn-box-shadow);
+    padding: 10px 22px;
+  }
 
-    &:enabled:hover,
-    &.pseudo-class-hover {
-        color: var(--btn-txt--hover);
-        background-color: var(--btn-bg--hover);
-        box-shadow: var(--btn-box-shadow--hover);
-    }
+  &--warning {
+    --btn-txt: #fff;
+    --btn-txt--hover: #fff;
+    --btn-txt--active: #fff;
 
-    &:enabled:active,
-    &.pseudo-class-active {
-        color: var(--btn-txt--active);
-        background-color: var(--btn-bg--active);
-        box-shadow: var(--btn-box-shadow--active);
-    }
+    --btn-bg: #e2a406;
+    --btn-bg--hover: linear-gradient(180deg, #f5cf6c 0%, #dea30d 100%);
+    --btn-bg--active: #c28e0a;
 
-    &:disabled,
-    &.pseudo-class-disabled {
-        opacity: .5;
-    }
+    --btn-box-shadow--hover: 0px 2px 2px 0px #e2a40659;
+    --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
-    &--primary {
-        --btn-bg: #008bce;
-        --btn-bg--hover: hsl(200, 100%, 46%);
-        --btn-bg--active: hsl(200, 100%, 35%);
+    border: none;
+    padding: 10px 22px;
+  }
 
-        --btn-txt: white;
-        --btn-txt--hover: white;
-        --btn-txt--active: white;
+  &--danger {
+    --btn-txt: #fff;
+    --btn-txt--hover: #fff;
+    --btn-txt--active: #fff;
 
-        --btn-box-shadow: inset 0 -2px 0 #0077B0;
-        --btn-box-shadow--hover: inset 0 -2px 0 #008ACC;
-        --btn-box-shadow--active: inset 0 2px 0 #005985;
-    }
+    --btn-bg: #d65a5a;
+    --btn-bg--hover: linear-gradient(180deg, #ee9a9a 0%, #bf4040 100%);
+    --btn-bg--active: #bf4040;
 
-    &--secondary {
-        --btn-txt: #008bce;
-        --btn-txt--hover: hsl(200, 100%, 46%);
-        --btn-txt--active: hsl(200, 100%, 35%);
+    --btn-box-shadow--hover: 0px 2px 2px 0px #d65a5a59;
+    --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
-        --btn-bg: #f4f4f4;
-        --btn-bg--hover: #fff;
-        --btn-bg--active: #e2e2e2;
-
-        --btn-box-shadow: inset 0 -2px 0 #81CEF2;
-        --btn-box-shadow--hover: inset 0 -2px 0 #81CEF2;
-        --btn-box-shadow--active: inset 0 2px 0 #7EB5CF;
-
-        border: 1px solid #008bce;
-
-        &:enabled:hover {
-            border-color: hsl(200, 100%, 46%);
-        }
-
-        &:enabled:active {
-            border-color: hsl(200, 100%, 35%);
-        }
-    }
-
-    &--large {
-        padding: 15px 20px;
-    }
-
-    &--compact {
-        padding: 5px 15px;
-    }
+    border: none;
+    padding: 10px 22px;
+  }
 }
 
 /*
@@ -98,23 +111,8 @@ Markup:
 <button class="m-btn {{modifier_class}}">Button</button>
 
 .m-btn--primary - primary button
-.m-btn--secondary - secondary button
+.m-btn--warning - warning button
+.m-btn--danger - danger button
 
 Styleguide Buttons.Colors
-*/
-
-/*
-Buttons (sizes)
-
-Buttons with different sizes.
-
-Markup:
-<button class="m-btn {{modifier_class}}">Button</button>
-<button class="m-btn m-btn--primary {{modifier_class}}">Button</button>
-<button class="m-btn m-btn--secondary {{modifier_class}}">Button</button>
-
-.m-btn--large - large sized buttons
-.m-btn--compact - compact sized buttons
-
-Styleguide Buttons.Sizes
 */
