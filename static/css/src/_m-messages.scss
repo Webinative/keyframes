@@ -21,78 +21,78 @@ Markup:
 Styleguide Messages.Levels
 */
 .m-messages {
-    --info-txt: #1A729D;
-    --info-bg: #DAEEF8;
-    --error-txt: #B53D2D;
-    --error-bg: #F6E0DD;
-    --success-txt: #307B2E;
-    --success-bg: #DEF6DD;
-    --warning-txt: #956312;
-    --warning-bg: #F6EFDD;
+  --info-txt: #1a729d;
+  --info-bg: #daeef8;
+  --error-txt: #b53d2d;
+  --error-bg: #f6e0dd;
+  --success-txt: #307b2e;
+  --success-bg: #def6dd;
+  --warning-txt: #956312;
+  --warning-bg: #f6efdd;
 
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 
-    &__item {
-        display: flex;
-        column-gap: 10px;
-        width: fit-content;
-        margin-block-end: 20px;
-        padding: 8px 20px;
-        color: var(--info-txt);
-        background-color: var(--info-bg);
-        border-radius: 20px;
+  &__item {
+    display: flex;
+    column-gap: 10px;
+    width: fit-content;
+    margin-block-end: 20px;
+    padding: 8px 20px;
+    color: var(--info-txt);
+    background-color: var(--info-bg);
+    border-radius: 20px;
 
-        &--error {
-            color: var(--error-txt);
-            background-color: var(--error-bg);
-        }
-
-        &--warning {
-            color: var(--warning-txt);
-            background-color: var(--warning-bg);
-        }
-
-        &--success {
-            color: var(--success-txt);
-            background-color: var(--success-bg);
-        }
+    &--error {
+      color: var(--error-txt);
+      background-color: var(--error-bg);
     }
 
-    &__icon {
-        --sprite-width: 80px;
-        --sprite-height: 40px;
-        --icon-size: 20px;
-
-        align-self: center;
-        width: var(--icon-size);
-        height: var(--icon-size);
-        background-image: url('/static/images/icons-sprite.svg');
-        background-position: 0 calc(-1 * var(--icon-size));
-        background-size: var(--sprite-width) var(--sprite-height);
+    &--warning {
+      color: var(--warning-txt);
+      background-color: var(--warning-bg);
     }
 
-    &__item--error &__icon {
-        background-position-x: calc(-2 * var(--icon-size));
+    &--success {
+      color: var(--success-txt);
+      background-color: var(--success-bg);
     }
+  }
 
-    &__item--success &__icon {
-        background-position-x: calc(-1 * var(--icon-size));
-    }
+  &__icon {
+    --sprite-width: 80px;
+    --sprite-height: 40px;
+    --icon-size: 20px;
 
-    &__item--warning &__icon {
-        background-position-x: calc(-3 * var(--icon-size));
-    }
+    align-self: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background-image: url("/static/images/icons-sprite.svg");
+    background-position: 0 calc(-1 * var(--icon-size));
+    background-size: var(--sprite-width) var(--sprite-height);
+  }
 
-    &__icon:hover {
-        background-color: #D65A5A;
-        background-position: calc(-2 * var(--icon-size)) 0;
-        border-radius: 50%;
-    }
+  &__item--error &__icon {
+    background-position-x: calc(-2 * var(--icon-size));
+  }
 
-    &__level {
-        font-weight: bold;
-    }
+  &__item--success &__icon {
+    background-position-x: calc(-1 * var(--icon-size));
+  }
+
+  &__item--warning &__icon {
+    background-position-x: calc(-3 * var(--icon-size));
+  }
+
+  &__icon:hover {
+    background-color: #d65a5a;
+    background-position: calc(-2 * var(--icon-size)) 0;
+    border-radius: 50%;
+  }
+
+  &__level {
+    font-weight: bold;
+  }
 }
 
 /*

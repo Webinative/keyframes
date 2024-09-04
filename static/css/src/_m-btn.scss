@@ -16,90 +16,90 @@ Markup:
 Styleguide Buttons.UIStates
 */
 .m-btn {
-    margin: 0;
-    border: 1px solid #A7B7C0;
-    padding: 9px 21px;
-    color: var(--btn-txt);
-    font-family: var(--body-txt);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
-    background: var(--btn-bg);
-    border-radius: 22px;
+  margin: 0;
+  border: 1px solid #a7b7c0;
+  padding: 9px 21px;
+  color: var(--btn-txt);
+  font-family: var(--body-txt);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  background: var(--btn-bg);
+  border-radius: 22px;
 
-    &:enabled:hover,
-    &.pseudo-class-hover {
-        color: var(--btn-txt--hover);
-        background: var(--btn-bg--hover);
-        box-shadow: var(--btn-box-shadow--hover);
+  &:enabled:hover,
+  &.pseudo-class-hover {
+    color: var(--btn-txt--hover);
+    background: var(--btn-bg--hover);
+    box-shadow: var(--btn-box-shadow--hover);
+  }
+
+  &:enabled:active,
+  &.pseudo-class-active {
+    color: var(--btn-txt--active);
+    background: var(--btn-bg--active);
+    box-shadow: var(--btn-box-shadow--active);
+  }
+
+  &:disabled,
+  &.pseudo-class-disabled {
+    opacity: 0.5;
+
+    &:hover,
+    &:active {
+      color: var(--btn-txt);
+      background: var(--btn-bg);
+      box-shadow: none;
     }
+  }
 
-    &:enabled:active,
-    &.pseudo-class-active {
-        color: var(--btn-txt--active);
-        background: var(--btn-bg--active);
-        box-shadow: var(--btn-box-shadow--active);
-    }
+  &--primary {
+    --btn-bg: #098cea;
+    --btn-bg--hover: linear-gradient(to bottom, #60b9f8 0%, #098cea 100%);
+    --btn-bg--active: #087fd3;
 
-    &:disabled,
-    &.pseudo-class-disabled {
-        opacity: .5;
+    --btn-txt: white;
+    --btn-txt--hover: white;
+    --btn-txt--active: white;
 
-        &:hover,
-        &:active {
-            color: var(--btn-txt);
-            background: var(--btn-bg);
-            box-shadow: none;
-        }
-    }
+    --btn-box-shadow--hover: 0px 2px 2px 0px #098cea59;
+    --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
-    &--primary {
-        --btn-bg: #098CEA;
-        --btn-bg--hover: linear-gradient(to bottom, #60b9f8 0%,#098cea 100%);
-        --btn-bg--active: #087FD3;
+    border: none;
+    padding: 10px 22px;
+  }
 
-        --btn-txt: white;
-        --btn-txt--hover: white;
-        --btn-txt--active: white;
+  &--warning {
+    --btn-txt: #fff;
+    --btn-txt--hover: #fff;
+    --btn-txt--active: #fff;
 
-        --btn-box-shadow--hover: 0px 2px 2px 0px #098CEA59;
-        --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
+    --btn-bg: #e2a406;
+    --btn-bg--hover: linear-gradient(180deg, #f5cf6c 0%, #dea30d 100%);
+    --btn-bg--active: #c28e0a;
 
-        border: none;
-        padding: 10px 22px;
-    }
+    --btn-box-shadow--hover: 0px 2px 2px 0px #e2a40659;
+    --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
-    &--warning {
-        --btn-txt: #fff;
-        --btn-txt--hover: #fff;
-        --btn-txt--active: #fff;
+    border: none;
+    padding: 10px 22px;
+  }
 
-        --btn-bg: #E2A406;
-        --btn-bg--hover: linear-gradient(180deg, #F5CF6C 0%, #DEA30D 100%);        ;
-        --btn-bg--active: #C28E0A;
+  &--danger {
+    --btn-txt: #fff;
+    --btn-txt--hover: #fff;
+    --btn-txt--active: #fff;
 
-        --btn-box-shadow--hover: 0px 2px 2px 0px #E2A40659;
-        --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
+    --btn-bg: #d65a5a;
+    --btn-bg--hover: linear-gradient(180deg, #ee9a9a 0%, #bf4040 100%);
+    --btn-bg--active: #bf4040;
 
-        border: none;
-        padding: 10px 22px;
-    }
+    --btn-box-shadow--hover: 0px 2px 2px 0px #d65a5a59;
+    --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
 
-    &--danger {
-        --btn-txt: #fff;
-        --btn-txt--hover: #fff;
-        --btn-txt--active: #fff;
-
-        --btn-bg: #D65A5A;
-        --btn-bg--hover: linear-gradient(180deg, #EE9A9A 0%, #BF4040 100%);        ;
-        --btn-bg--active: #BF4040;
-
-        --btn-box-shadow--hover: 0px 2px 2px 0px #D65A5A59;
-        --btn-box-shadow--active: 0px 3px 2px 0px #00000040 inset;
-
-        border: none;
-        padding: 10px 22px;
-    }
+    border: none;
+    padding: 10px 22px;
+  }
 }
 
 /*
