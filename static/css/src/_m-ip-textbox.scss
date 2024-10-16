@@ -48,10 +48,33 @@ Styleguide Textbox.UIStates
       box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.251) inset;
     }
 
+    &:read-only {
+      cursor: not-allowed;
+
+      &:hover {
+        border-color: var(--ip-border);
+        background-color: #fff;
+      }
+
+      &:focus,
+      &:active {
+        border-color: var(--ip-border);
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+
     &:disabled {
       border-color: var(--ip-border--disabled);
       background-color: var(--ip-bg--disabled);
       cursor: not-allowed;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: var(--ip-border--disabled);
+        background-color: var(--ip-bg--disabled);
+      }
     }
   }
 
@@ -131,4 +154,19 @@ Markup:
 </div>
 
 Styleguide Textbox.Disabled
+*/
+
+/*
+Textbox (readonly)
+
+Input textbox readonly state.
+
+Markup:
+<div class="m-ip-textbox">
+    <label class="m-ip-textbox__label" for="readonly">Full name</label>
+    <input class="m-ip-textbox__input" type="text" id="readonly" name="full_name" placeholder="readonly input"
+        readonly>
+</div>
+
+Styleguide Textbox.Readonly
 */
